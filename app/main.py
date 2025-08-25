@@ -5,7 +5,7 @@ def cache(func: Callable) -> Callable:
     cache_storage = {}
 
     def wrapper(*args) -> Any:
-        current_func = f"{func.__name__}{args}"
+        current_func = args
         if current_func in cache_storage:
             print("Getting from cache")
             return cache_storage[current_func]
